@@ -6,6 +6,7 @@ from keras.optimizers import SGD, Adam
 import prepare_data as pd
 import numpy
 import math
+import lib.active_shift2d_op as active_shift2d_op
 
 
 def psnr(target, ref):
@@ -38,7 +39,7 @@ def predict_model():
 
 def predict():
     srcnn_model = predict_model()
-#srcnn_model.load_weights("3051crop_weight_200.h5")
+    #srcnn_model.load_weights("3051crop_weight_200.h5")
     srcnn_model.load_weights("SRCNN_check.h5")
     IMG_NAME = "/home/mlvcgpu/jiwon/SRCNN_keras/Test/Set14/face.bmp"
     INPUT_NAME = "input2.jpg"
